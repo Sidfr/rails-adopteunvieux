@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
+  has_many :services
+  has_many :availabilities, through: :services
+  has_many :bookings
 end
