@@ -8,4 +8,10 @@ class User < ApplicationRecord
   has_many :services
   has_many :availabilities, through: :services
   has_many :bookings
+  has_many :sent, class_name: 'Review', foreign_key: 'sender_id'
+  has_many :received, class_name: 'Review', foreign_key: 'recipient_id'
+
 end
+
+
+
